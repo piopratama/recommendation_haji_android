@@ -1,1 +1,143 @@
-<LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android"></LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#32CD32"
+>
+	<Toolbar
+		android:minHeight="?android:attr/actionBarSize"
+		android:background="#FFD700"
+		android:minWidth="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/toolbar1">
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:typeface="serif"
+			android:textSize="20dp"
+			android:text="Recomendation Haji"
+			android:textColor="#000000"
+		/>
+	</Toolbar>
+	<ScrollView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollView1">
+		<LinearLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:padding="20dp"
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/scrollView1">
+			<ProgressBar
+				style="?android:attr/progressBarStyleHorizontal"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/progressBar"
+				android:visibility="invisible" />
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="center_horizontal"
+				android:text="Select Your Depture"
+				android:typeface="serif"
+				android:layout_margin="20dp"
+				android:background="@android:color/transparent"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+			/>
+			<EditText
+				android:inputType="date"
+				android:id="@+id/dateOfDepartureTxt"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:typeface="serif"
+				android:hint="Jadwal Keberangkatan"
+				android:textColorHint="#777777"
+				android:background="@drawable/edittext_bottom_line"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:layout_marginBottom="20dp"
+				/>
+			<EditText
+				android:id="@+id/packageTxt"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:typeface="serif"
+				android:hint="Paket"
+				android:textColorHint="#777777"
+				android:background="@drawable/edittext_bottom_line"
+				android:layout_weight="1"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:layout_marginBottom="20dp"
+				/>
+			<EditText
+				android:inputType="number"
+				android:id="@+id/totalGuestTxt"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:typeface="serif"
+				android:hint="Total Guest"
+				android:background="@drawable/edittext_bottom_line"
+				android:layout_weight="1"
+				android:textColorHint="#777777"
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:layout_marginBottom="20dp"
+				/>
+			<LinearLayout
+				android:orientation="horizontal"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+				<CheckBox
+					android:id="@+id/lowestPriceCheck"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:typeface="serif"
+					android:text="Lowest  Price"
+					android:layout_weight="0.3"
+					/>
+				<CheckBox
+					android:id="@+id/filterTxt"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:typeface="serif"
+					android:text="Highest  Price"
+					android:layout_weight="0.3"
+					/>
+				<CheckBox
+					android:id="@+id/filterTxt"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:typeface="serif"
+					android:text="Highest  Rate"
+					android:layout_weight="0.3"
+					/>
+			</LinearLayout>
+			<Button
+				android:id="@+id/submitBtn"
+				android:typeface="serif"
+				android:text="Submit"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:backgroundTint="#FFD700"
+				android:layout_margin="20dp"
+			/>
+
+		</LinearLayout>	
+	</ScrollView>
+	<android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout>
+</LinearLayout>

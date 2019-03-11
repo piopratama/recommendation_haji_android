@@ -21,9 +21,9 @@ namespace RecommendationHaji.MyClass
     const int SUCCESS = 1;
     const int NOERROR = 0;
     const int ERROR = -1;
-    const string IP = "192.168.1.9";
+    const string IP = "192.168.43.63";
 
-    private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/github/recommendation_haji_service/service.php");
+    private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/Service/recommendation_haji_service/service.php");
 
     public List<MyObjectInJson> GetTableRestaurant()
     {
@@ -123,8 +123,8 @@ namespace RecommendationHaji.MyClass
 
         listData.Add(myObjectJson);
 
-
-        var myResult = GetJSONData(ListObjectToJson(listData));
+        string resultListObj = ListObjectToJson(listData);
+        var myResult = GetJSONData(resultListObj);
 
         if (myResult.ErrorCode == 0)
         {
@@ -159,6 +159,206 @@ namespace RecommendationHaji.MyClass
         return listDataResult;
       }
       catch(Exception e)
+      {
+        listDataResult = new List<MyObjectInJson>();
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "key";
+        myObjectJson.ObjectID = "-1";
+        listDataResult.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "message";
+        myObjectJson.ObjectID = ErrorMessage(e.Message);
+        listDataResult.Add(myObjectJson);
+
+        return listDataResult;
+      }
+    }
+
+    public List<MyObjectInJson> CriteriaProcess(string dateOfDeparture, string dateOfReturn, string packeges, string price)
+    {
+      List<MyObjectInJson> listData = new List<MyObjectInJson>();
+      List<MyObjectInJson> listDataResult = null;
+
+      MyObjectInJson myObjectJson = new MyObjectInJson();
+
+      try
+      {
+        myObjectJson.ObjectID = "url";
+        myObjectJson.ObjectInJson = "criteria";
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "dateOfDepartureCriteria";
+        myObjectJson.ObjectInJson = dateOfDeparture;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "dateOfDepatureCriteria";
+        myObjectJson.ObjectInJson = dateOfReturn;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "packegesCriteria";
+        myObjectJson.ObjectInJson = packeges;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "priceCriteria";
+        myObjectJson.ObjectInJson = price;
+
+        listData.Add(myObjectJson);
+
+        string resultListObj = ListObjectToJson(listData);
+        var myResult = GetJSONData(resultListObj);
+
+        if (myResult.ErrorCode == 0)
+        {
+          if (myResult.Result.Length > 0)
+          {
+            listDataResult = JsonConvert.DeserializeObject<List<MyObjectInJson>>(myResult.Result);
+
+            if (listDataResult.Count > 2)
+            {
+              int length_data_json = listDataResult[2].ObjectInJson.ToString().Length;
+              string data_json = listDataResult[2].ObjectInJson.ToString().Substring(1, length_data_json - 2);
+              var x = JsonConvert.DeserializeObject<Dictionary<string, string>>(data_json);
+              listDataResult[2].ObjectInJson = x;
+            }
+          }
+        }
+        else if (myResult.ErrorCode == -1)
+        {
+          listDataResult = new List<MyObjectInJson>();
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "key";
+          myObjectJson.ObjectID = "-1";
+          listDataResult.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "message";
+          myObjectJson.ObjectID = myResult.ErrorMessage;
+          listDataResult.Add(myObjectJson);
+        }
+
+        return listDataResult;
+      }
+      catch (Exception e)
+      {
+        listDataResult = new List<MyObjectInJson>();
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "key";
+        myObjectJson.ObjectID = "-1";
+        listDataResult.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "message";
+        myObjectJson.ObjectID = ErrorMessage(e.Message);
+        listDataResult.Add(myObjectJson);
+
+        return listDataResult;
+      }
+    }
+
+    public List<MyObjectInJson> UserRegistration(string fullName, string username, string password, string dayOfBirth, string email, string address, string phoneNumber)
+    {
+      List<MyObjectInJson> listData = new List<MyObjectInJson>();
+      List<MyObjectInJson> listDataResult = null;
+
+      MyObjectInJson myObjectJson = new MyObjectInJson();
+
+      try
+      {
+        myObjectJson.ObjectID = "url";
+        myObjectJson.ObjectInJson = "registrationUser";
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "fullNameRegistration";
+        myObjectJson.ObjectInJson = fullName;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "usernameRegistration";
+        myObjectJson.ObjectInJson = username;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "passwordRegistration";
+        myObjectJson.ObjectInJson = password;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "dayOfBirthRegistration";
+        myObjectJson.ObjectInJson = dayOfBirth;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "emailRegistration";
+        myObjectJson.ObjectInJson = email;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "addressRegistration";
+        myObjectJson.ObjectInJson = address;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "phoneNumberRegistration";
+        myObjectJson.ObjectInJson = phoneNumber;
+
+        listData.Add(myObjectJson);
+
+        string resultListObj = ListObjectToJson(listData);
+        var myResult = GetJSONData(resultListObj);
+
+        if (myResult.ErrorCode == 0)
+        {
+          if (myResult.Result.Length > 0)
+          {
+            listDataResult = JsonConvert.DeserializeObject<List<MyObjectInJson>>(myResult.Result);
+
+            if (listDataResult.Count > 2)
+            {
+              int length_data_json = listDataResult[2].ObjectInJson.ToString().Length;
+              string data_json = listDataResult[2].ObjectInJson.ToString().Substring(1, length_data_json - 2);
+              var x = JsonConvert.DeserializeObject<Dictionary<string, string>>(data_json);
+              listDataResult[2].ObjectInJson = x;
+            }
+          }
+        }
+        else if (myResult.ErrorCode == -1)
+        {
+          listDataResult = new List<MyObjectInJson>();
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "key";
+          myObjectJson.ObjectID = "-1";
+          listDataResult.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "message";
+          myObjectJson.ObjectID = myResult.ErrorMessage;
+          listDataResult.Add(myObjectJson);
+        }
+
+        return listDataResult;
+      }
+      catch (Exception e)
       {
         listDataResult = new List<MyObjectInJson>();
 

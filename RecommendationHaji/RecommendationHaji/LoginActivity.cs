@@ -10,10 +10,11 @@ using Android.Content;
 using Android.Views.InputMethods;
 using System.Diagnostics;
 using System;
+using Android.Views;
 
 namespace RecommendationHaji
 {
-  [Activity(Label = "DeliResto", MainLauncher = true, Theme = "@android:style/Theme.DeviceDefault.Light.NoActionBar")]
+  [Activity(Label = "LoginActivity", Theme = "@style/AppTheme", WindowSoftInputMode = SoftInput.AdjustResize | SoftInput.StateHidden)]
   public class LoginActivity : AppCompatActivity
   {
     EditText usernameTxt, passwordTxt;
@@ -39,9 +40,10 @@ namespace RecommendationHaji
       string username, password;
       username = usernameTxt.Text;
       password = passwordTxt.Text;
-
-      hideKeyboard(usernameTxt);
-      hideKeyboard(passwordTxt);
+      
+      InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
+      MyGlobalClass.hideKeyboard(ref imm, ref usernameTxt);
+      MyGlobalClass.hideKeyboard(ref imm ,ref passwordTxt);
 
       mProgress.Visibility = Android.Views.ViewStates.Visible;
       mProgress.Progress = 50;
@@ -65,7 +67,7 @@ namespace RecommendationHaji
                     if (loginResult[0].ObjectInJson.ToString() == "1")
                     {
                       Dictionary<string, string> userData = (Dictionary<string, string>)loginResult[2].ObjectInJson;
-                      Session.name = userData["name"];
+                      //Session.name = userData["name"];
                       Session.username = userData["username"];
                       Session.userLevel = int.Parse(userData["level"]);
 
@@ -111,28 +113,11 @@ namespace RecommendationHaji
       }
       catch (Exception ex)
       {
-        Toast.MakeText(this, ErrorMessage(ex.Message), ToastLength.Short).Show();
+        StackTrace st = new StackTrace();
+        Toast.MakeText(this, MyGlobalClass.ErrorMessage(this,ref st, ex.Message), ToastLength.Short).Show();
         mProgress.Progress = 0;
         mProgress.Visibility = Android.Views.ViewStates.Invisible;
       }
     }
-
-    public void hideKeyboard(EditText editText)
-    {
-      InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
-      imm.HideSoftInputFromWindow(editText.WindowToken, 0);
-    }
-
-    public string ErrorMessage(string eMessage)
-    {
-      //+PIO 20190108 get class and method name
-      var st = new StackTrace();
-      var sf = st.GetFrame(0);
-
-      var currentMethodName = sf.GetMethod();
-
-      return "Class: " + this.GetType().Name + "\nMethod: " + currentMethodName + "\nError: " + eMessage;
-    }
-
   }
 }
