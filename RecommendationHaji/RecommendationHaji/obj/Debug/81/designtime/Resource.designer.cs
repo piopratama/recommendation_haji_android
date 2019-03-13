@@ -2417,8 +2417,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030038
 			public const int AddGuestBtn = 2130903096;
 			
-			// aapt resource value: 0x7F030047
-			public const int AddressTxt = 2130903111;
+			// aapt resource value: 0x7F030048
+			public const int AddressTxt = 2130903112;
 			
 			// aapt resource value: 0x7F030014
 			public const int AgencyNameTxtView = 2130903060;
@@ -2474,6 +2474,9 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0022
 			public const int coordinator = 2131492898;
 			
+			// aapt resource value: 0x7F030046
+			public const int CriteriaParent = 2130903110;
+			
 			// aapt resource value: 0x7F0C0023
 			public const int custom = 2131492899;
 			
@@ -2486,8 +2489,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030006
 			public const int DateOfReturnTxt = 2130903046;
 			
-			// aapt resource value: 0x7F030046
-			public const int DayOfBirthTxt = 2130903110;
+			// aapt resource value: 0x7F030047
+			public const int DayOfBirthTxt = 2130903111;
 			
 			// aapt resource value: 0x7F0C0025
 			public const int decor_content_parent = 2131492901;
@@ -2513,8 +2516,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
 			
-			// aapt resource value: 0x7F030048
-			public const int EmailTxt = 2130903112;
+			// aapt resource value: 0x7F030049
+			public const int EmailTxt = 2130903113;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int end = 2131492909;
@@ -2594,14 +2597,14 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C003B
 			public const int item_touch_helper_previous_elevation = 2131492923;
 			
-			// aapt resource value: 0x7F030049
-			public const int i_music = 2130903113;
-			
 			// aapt resource value: 0x7F030050
-			public const int i_song = 2130903120;
+			public const int i_music = 2130903120;
 			
 			// aapt resource value: 0x7F030051
-			public const int i_test = 2130903121;
+			public const int i_song = 2130903121;
+			
+			// aapt resource value: 0x7F030052
+			public const int i_test = 2130903122;
 			
 			// aapt resource value: 0x7F0C003C
 			public const int largeLabel = 2131492924;

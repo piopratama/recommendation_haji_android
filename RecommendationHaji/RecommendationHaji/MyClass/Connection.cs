@@ -13,6 +13,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace RecommendationHaji.MyClass
 {
@@ -21,9 +22,9 @@ namespace RecommendationHaji.MyClass
     const int SUCCESS = 1;
     const int NOERROR = 0;
     const int ERROR = -1;
-    const string IP = "192.168.43.63";
+    const string IP = "192.168.100.7";
 
-    private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/Service/recommendation_haji_service/service.php");
+    private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/github/recommendation_haji_service/service.php");
 
     public List<MyObjectInJson> GetTableRestaurant()
     {
@@ -197,7 +198,7 @@ namespace RecommendationHaji.MyClass
         listData.Add(myObjectJson);
 
         myObjectJson = new MyObjectInJson();
-        myObjectJson.ObjectID = "dateOfDepatureCriteria";
+        myObjectJson.ObjectID = "dateOfReturnCriteria";
         myObjectJson.ObjectInJson = dateOfReturn;
 
         listData.Add(myObjectJson);
@@ -225,10 +226,19 @@ namespace RecommendationHaji.MyClass
 
             if (listDataResult.Count > 2)
             {
-              int length_data_json = listDataResult[2].ObjectInJson.ToString().Length;
-              string data_json = listDataResult[2].ObjectInJson.ToString().Substring(1, length_data_json - 2);
-              var x = JsonConvert.DeserializeObject<Dictionary<string, string>>(data_json);
-              listDataResult[2].ObjectInJson = x;
+              List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
+              Dictionary<string, string> myDictionary = new Dictionary<string, string>();
+              JArray x = JsonConvert.DeserializeObject<JArray>(listDataResult[2].ObjectInJson.ToString());
+              foreach (JObject content in x.Children<JObject>())
+              {
+                foreach (JProperty prop in content.Properties())
+                {
+                  myDictionary.Add(prop.Name, prop.Value.ToString());
+                }
+                data.Add(myDictionary);
+                myDictionary = new Dictionary<string, string>();
+              }
+              listDataResult[2].ObjectInJson = data;
             }
           }
         }

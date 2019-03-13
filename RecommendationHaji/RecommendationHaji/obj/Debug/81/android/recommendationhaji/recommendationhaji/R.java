@@ -2954,14 +2954,15 @@ containing a value of this type.
     public static final class id {
         public static final int ALT=0x7f080031;
         public static final int AddGuestBtn=0x7f0800bc;
-        public static final int AddressTxt=0x7f0800d9;
+        public static final int AddressTxt=0x7f0800da;
         public static final int AgencyNameTxtView=0x7f0800a4;
         public static final int AgesTxt=0x7f0800bb;
         public static final int CTRL=0x7f080032;
+        public static final int CriteriaParent=0x7f0800d7;
         public static final int DateOfDepartureTxt=0x7f08008d;
         public static final int DateOfReturnTxt=0x7f08008e;
-        public static final int DayOfBirthTxt=0x7f0800d8;
-        public static final int EmailTxt=0x7f0800da;
+        public static final int DayOfBirthTxt=0x7f0800d9;
+        public static final int EmailTxt=0x7f0800db;
         public static final int FUNCTION=0x7f080033;
         public static final int FoodImg=0x7f0800b3;
         public static final int FoodTxt=0x7f0800b4;
@@ -3060,9 +3061,9 @@ containing a value of this type.
         public static final int ghost_view=0x7f08000a;
         public static final int home=0x7f080005;
         public static final int homeAsUp=0x7f080020;
-        public static final int i_music=0x7f0800dd;
-        public static final int i_song=0x7f0800de;
-        public static final int i_test=0x7f0800df;
+        public static final int i_music=0x7f0800de;
+        public static final int i_song=0x7f0800df;
+        public static final int i_test=0x7f0800e0;
         public static final int icon=0x7f080061;
         public static final int icon_group=0x7f0800d4;
         public static final int ifRoom=0x7f080039;
@@ -3079,9 +3080,9 @@ containing a value of this type.
         public static final int list_item=0x7f080060;
         public static final int loginBtn=0x7f0800c1;
         public static final int lowestPriceCheck=0x7f080091;
-        public static final int masked=0x7f0800dc;
+        public static final int masked=0x7f0800dd;
         public static final int media_actions=0x7f0800c9;
-        public static final int message=0x7f0800d7;
+        public static final int message=0x7f0800d8;
         public static final int middle=0x7f080030;
         public static final int mini=0x7f080052;
         public static final int multiply=0x7f080026;
@@ -3173,7 +3174,7 @@ containing a value of this type.
         public static final int useLogo=0x7f080025;
         public static final int usernameTxt=0x7f0800bf;
         public static final int view_offset_helper=0x7f080016;
-        public static final int visible=0x7f0800db;
+        public static final int visible=0x7f0800dc;
         public static final int withText=0x7f08003b;
         public static final int wrap_content=0x7f08002d;
     }

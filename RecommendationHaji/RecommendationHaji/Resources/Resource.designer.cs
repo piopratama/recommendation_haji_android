@@ -2357,8 +2357,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7f0800bc
 			public const int AddGuestBtn = 2131230908;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int AddressTxt = 2131230937;
+			// aapt resource value: 0x7f0800da
+			public const int AddressTxt = 2131230938;
 			
 			// aapt resource value: 0x7f0800a4
 			public const int AgencyNameTxtView = 2131230884;
@@ -2369,17 +2369,20 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7f080032
 			public const int CTRL = 2131230770;
 			
+			// aapt resource value: 0x7f0800d7
+			public const int CriteriaParent = 2131230935;
+			
 			// aapt resource value: 0x7f08008d
 			public const int DateOfDepartureTxt = 2131230861;
 			
 			// aapt resource value: 0x7f08008e
 			public const int DateOfReturnTxt = 2131230862;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int DayOfBirthTxt = 2131230936;
+			// aapt resource value: 0x7f0800d9
+			public const int DayOfBirthTxt = 2131230937;
 			
-			// aapt resource value: 0x7f0800da
-			public const int EmailTxt = 2131230938;
+			// aapt resource value: 0x7f0800db
+			public const int EmailTxt = 2131230939;
 			
 			// aapt resource value: 0x7f080033
 			public const int FUNCTION = 2131230771;
@@ -2675,14 +2678,14 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7f080020
 			public const int homeAsUp = 2131230752;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int i_music = 2131230941;
-			
 			// aapt resource value: 0x7f0800de
-			public const int i_song = 2131230942;
+			public const int i_music = 2131230942;
 			
 			// aapt resource value: 0x7f0800df
-			public const int i_test = 2131230943;
+			public const int i_song = 2131230943;
+			
+			// aapt resource value: 0x7f0800e0
+			public const int i_test = 2131230944;
 			
 			// aapt resource value: 0x7f080061
 			public const int icon = 2131230817;
@@ -2732,14 +2735,14 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7f080091
 			public const int lowestPriceCheck = 2131230865;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int masked = 2131230940;
+			// aapt resource value: 0x7f0800dd
+			public const int masked = 2131230941;
 			
 			// aapt resource value: 0x7f0800c9
 			public const int media_actions = 2131230921;
 			
-			// aapt resource value: 0x7f0800d7
-			public const int message = 2131230935;
+			// aapt resource value: 0x7f0800d8
+			public const int message = 2131230936;
 			
 			// aapt resource value: 0x7f080030
 			public const int middle = 2131230768;
@@ -3014,8 +3017,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800db
-			public const int visible = 2131230939;
+			// aapt resource value: 0x7f0800dc
+			public const int visible = 2131230940;
 			
 			// aapt resource value: 0x7f08003b
 			public const int withText = 2131230779;
