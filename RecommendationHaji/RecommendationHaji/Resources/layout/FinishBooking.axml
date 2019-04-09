@@ -14,13 +14,6 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:background="#00B32C">
-			<ImageButton
-				android:src="@drawable/BackArrow"
-				android:layout_marginLeft="-10dp"
-				android:backgroundTint="#00B32C"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/imageButton1" />
 			<TextView
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -36,10 +29,17 @@
 			android:padding="20dp"
 			android:id="@+id/scrollView1">
 			<LinearLayout
+				android:id="@+id/finishBookingParent"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:orientation="vertical">
-				<TextView
+				<LinearLayout
+				android:id="@+id/bookingParent"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical">
+				</LinearLayout>
+				<!--<TextView
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:paddingLeft="20dp"
@@ -206,18 +206,17 @@
 						<Button
 							android:layout_width="100dp"
 							android:layout_height="30dp"
-							android:layout_marginRight="10dp"
-							android:background="@android:color/holo_blue_dark"
-							android:text="Add Guest"
-							android:id="@+id/AddGuestBtn"/>
-						<Button
-							android:layout_width="100dp"
-							android:layout_height="30dp"
 							android:background="#1fc600"
 							android:text="Submit"
 							android:id="@+id/SubmitBtn"/>
 				</LinearLayout>
-			</LinearLayout>
+			</LinearLayout>-->
+			<Button
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:background="@android:color/holo_blue_light"
+							android:text="Submit"
+							android:id="@+id/SubmitBtn"/>
 		</LinearLayout>
 	 </ScrollView>
 	</LinearLayout>

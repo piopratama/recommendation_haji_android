@@ -2414,17 +2414,11 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0015
 			public const int add = 2131492885;
 			
-			// aapt resource value: 0x7F030038
-			public const int AddGuestBtn = 2130903096;
-			
-			// aapt resource value: 0x7F030048
-			public const int AddressTxt = 2130903112;
+			// aapt resource value: 0x7F030044
+			public const int AddressTxt = 2130903108;
 			
 			// aapt resource value: 0x7F030014
 			public const int AgencyNameTxtView = 2130903060;
-			
-			// aapt resource value: 0x7F030037
-			public const int AgesTxt = 2130903095;
 			
 			// aapt resource value: 0x7F0C0016
 			public const int alertTitle = 2131492886;
@@ -2437,6 +2431,9 @@ namespace RecommendationHaji
 			
 			// aapt resource value: 0x7F0C0007
 			public const int blocking = 2131492871;
+			
+			// aapt resource value: 0x7F030033
+			public const int bookingParent = 2130903091;
 			
 			// aapt resource value: 0x7F0C001A
 			public const int bottom = 2131492890;
@@ -2474,8 +2471,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0022
 			public const int coordinator = 2131492898;
 			
-			// aapt resource value: 0x7F030046
-			public const int CriteriaParent = 2130903110;
+			// aapt resource value: 0x7F030041
+			public const int CriteriaParent = 2130903105;
 			
 			// aapt resource value: 0x7F0C0023
 			public const int custom = 2131492899;
@@ -2489,8 +2486,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030006
 			public const int DateOfReturnTxt = 2130903046;
 			
-			// aapt resource value: 0x7F030047
-			public const int DayOfBirthTxt = 2130903111;
+			// aapt resource value: 0x7F030043
+			public const int DayOfBirthTxt = 2130903107;
 			
 			// aapt resource value: 0x7F0C0025
 			public const int decor_content_parent = 2131492901;
@@ -2516,8 +2513,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
 			
-			// aapt resource value: 0x7F030049
-			public const int EmailTxt = 2130903113;
+			// aapt resource value: 0x7F030045
+			public const int EmailTxt = 2130903109;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int end = 2131492909;
@@ -2537,6 +2534,9 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030010
 			public const int filterTxt = 2130903056;
 			
+			// aapt resource value: 0x7F030032
+			public const int finishBookingParent = 2130903090;
+			
 			// aapt resource value: 0x7F0C0032
 			public const int @fixed = 2131492914;
 			
@@ -2549,11 +2549,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0009
 			public const int forever = 2131492873;
 			
-			// aapt resource value: 0x7F030034
-			public const int FullNameTxt = 2130903092;
-			
-			// aapt resource value: 0x7F030036
-			public const int GenderTxt = 2130903094;
+			// aapt resource value: 0x7F030042
+			public const int FullNameTxt = 2130903106;
 			
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
@@ -2579,14 +2576,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C000B
 			public const int icon_group = 2131492875;
 			
-			// aapt resource value: 0x7F030033
-			public const int IdentityNumberTxt = 2130903091;
-			
 			// aapt resource value: 0x7F0C0038
 			public const int image = 2131492920;
-			
-			// aapt resource value: 0x7F030032
-			public const int imageButton1 = 2130903090;
 			
 			// aapt resource value: 0x7F0C000C
 			public const int info = 2131492876;
@@ -2597,14 +2588,14 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C003B
 			public const int item_touch_helper_previous_elevation = 2131492923;
 			
-			// aapt resource value: 0x7F030050
-			public const int i_music = 2130903120;
+			// aapt resource value: 0x7F030047
+			public const int i_music = 2130903111;
 			
-			// aapt resource value: 0x7F030051
-			public const int i_song = 2130903121;
+			// aapt resource value: 0x7F030048
+			public const int i_song = 2130903112;
 			
-			// aapt resource value: 0x7F030052
-			public const int i_test = 2130903122;
+			// aapt resource value: 0x7F030049
+			public const int i_test = 2130903113;
 			
 			// aapt resource value: 0x7F0C003C
 			public const int largeLabel = 2131492924;
@@ -2630,8 +2621,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030017
 			public const int LocationTxt = 2130903063;
 			
-			// aapt resource value: 0x7F030043
-			public const int loginBtn = 2130903107;
+			// aapt resource value: 0x7F030038
+			public const int loginBtn = 2130903096;
 			
 			// aapt resource value: 0x7F030015
 			public const int LogoImg = 2130903061;
@@ -2696,11 +2687,11 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C004F
 			public const int parent_matrix = 2131492943;
 			
-			// aapt resource value: 0x7F030042
-			public const int passwordTxt = 2130903106;
+			// aapt resource value: 0x7F030037
+			public const int passwordTxt = 2130903095;
 			
-			// aapt resource value: 0x7F030035
-			public const int PhoneNumberTxt = 2130903093;
+			// aapt resource value: 0x7F030046
+			public const int PhoneNumberTxt = 2130903110;
 			
 			// aapt resource value: 0x7F0C0050
 			public const int pin = 2131492944;
@@ -2720,8 +2711,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0053
 			public const int radio = 2131492947;
 			
-			// aapt resource value: 0x7F030045
-			public const int ratingBar1 = 2130903109;
+			// aapt resource value: 0x7F030040
+			public const int ratingBar1 = 2130903104;
 			
 			// aapt resource value: 0x7F0C0054
 			public const int right = 2131492948;
@@ -2828,8 +2819,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0075
 			public const int submenuarrow = 2131492981;
 			
-			// aapt resource value: 0x7F030039
-			public const int SubmitBtn = 2130903097;
+			// aapt resource value: 0x7F030034
+			public const int SubmitBtn = 2130903092;
 			
 			// aapt resource value: 0x7F030011
 			public const int submitCriteriaBtn = 2130903057;
@@ -2858,11 +2849,11 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C007B
 			public const int textSpacerNoTitle = 2131492987;
 			
-			// aapt resource value: 0x7F030040
-			public const int textView1 = 2130903104;
+			// aapt resource value: 0x7F030035
+			public const int textView1 = 2130903093;
 			
-			// aapt resource value: 0x7F030044
-			public const int textView2 = 2130903108;
+			// aapt resource value: 0x7F030039
+			public const int textView2 = 2130903097;
 			
 			// aapt resource value: 0x7F030013
 			public const int TextViewTitle = 2130903059;
@@ -2921,8 +2912,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C008C
 			public const int up = 2131493004;
 			
-			// aapt resource value: 0x7F030041
-			public const int usernameTxt = 2130903105;
+			// aapt resource value: 0x7F030036
+			public const int usernameTxt = 2130903094;
 			
 			// aapt resource value: 0x7F0C008D
 			public const int view_offset_helper = 2131493005;

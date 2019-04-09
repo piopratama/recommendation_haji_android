@@ -7,11 +7,13 @@ using System.Text;
 using System.Threading;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Java.Net;
 using Newtonsoft.Json;
 using RecommendationHaji.MyClass;
 
@@ -52,31 +54,31 @@ namespace RecommendationHaji
     private void designCriteriaResult(Dictionary<string,string> data)
     {
       TextView travelPlaceholder = new TextView(this);
-      travelPlaceholder.Text = "Location: Bali";
-      travelPlaceholder.SetTextSize(Android.Util.ComplexUnitType.Dip, 20);
+      travelPlaceholder.Text = "Departure:"+" "+data["date_start"].ToString();
+      travelPlaceholder.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
       travelPlaceholder.SetTextColor(Android.Graphics.Color.Black);
 
       ImageView iconPlaceholder = new ImageView(this);
       iconPlaceholder.SetImageResource(Resource.Drawable.placeholder);
-      iconPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(120, 80);
+      iconPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
 
       TextView travelHaji = new TextView(this);
-      travelHaji.Text = data["id"].ToString();
-      travelHaji.SetTextSize(Android.Util.ComplexUnitType.Dip, 20);
+      travelHaji.Text ="Return:"+" "+data["date_end"].ToString();
+      travelHaji.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
       travelHaji.SetTextColor(Android.Graphics.Color.Black);
 
       ImageView iconHaji = new ImageView(this);
       iconHaji.SetImageResource(Resource.Drawable.star);
-      iconHaji.LayoutParameters = new LinearLayout.LayoutParams(120, 80);
+      iconHaji.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
 
       TextView travelUmroh = new TextView(this);
-      travelUmroh.Text = "350 on 2018";
-      travelUmroh.SetTextSize(Android.Util.ComplexUnitType.Dip, 20);
+      travelUmroh.Text = "Package"+" "+data["packet"].ToString();
+      travelUmroh.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
       travelUmroh.SetTextColor(Android.Graphics.Color.Black);
 
       ImageView iconUmroh = new ImageView(this);
       iconUmroh.SetImageResource(Resource.Drawable.star);
-      iconUmroh.LayoutParameters = new LinearLayout.LayoutParams(120, 80);
+      iconUmroh.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
 
       LinearLayout linearParentPlaceholder = new LinearLayout(this);
       linearParentPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
@@ -107,8 +109,9 @@ namespace RecommendationHaji
       linearInfo.AddView(linearParentUmroh, 2);
 
       ImageView iconTravel = new ImageView(this);
-      iconTravel.SetImageResource(Resource.Drawable.home);
-      iconTravel.LayoutParameters = new LinearLayout.LayoutParams(400, 300);
+      var imageBitmap = MyGlobalClass.GetImageBitmapFromUrl(data["logo"]);
+      iconTravel.SetImageBitmap(imageBitmap);
+      iconTravel.LayoutParameters = new LinearLayout.LayoutParams(380, 280);
 
       LinearLayout linearParentdesc = new LinearLayout(this);
       linearParentdesc.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
@@ -123,7 +126,7 @@ namespace RecommendationHaji
       travelName.SetPadding(60, 20, 20, 20);
 
       TextView travelPrice = new TextView(this);
-      travelPrice.Text = "Rp." + "24.000.000";
+      travelPrice.Text = "Rp." + data["price"].ToString();
       travelPrice.SetTextColor(Android.Graphics.Color.Black);
       travelPrice.SetTextSize(Android.Util.ComplexUnitType.Pt, 12);
       travelPrice.SetPadding(60, 60, 0, 20);
@@ -137,16 +140,22 @@ namespace RecommendationHaji
       linearParent.AddView(linearParentdesc, 1);
       linearParent.AddView(travelPrice, 2);
       linearParent.Click += LinearParent_Click;
-      linearParent.Tag = data["id"]+"_"+data["name"];
+      string s = string.Join(";", data.Select(x => x.Value).ToArray());
+      linearParent.Tag = s;
 
-      criteriaParent.SetPadding(60, 20, 60, 20);
+      LinearLayout.LayoutParams margin = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent, ViewGroup.LayoutParams.FillParent);
+      margin.SetMargins(30, 30, 30, 30);
       criteriaParent.AddView(linearParent, 0);
     }
 
     private void LinearParent_Click(object sender, EventArgs e)
     {
       LinearLayout control = (LinearLayout)sender;
-      string id = control.Tag.ToString();
+      string rawData = control.Tag.ToString();
+
+      Intent activity = new Intent(this, typeof(FinishBookingActivity));
+      activity.PutExtra("rawData", rawData);
+      StartActivity(activity);
     }
 
     private void getResultRecommendation(List<List<String>> data)
