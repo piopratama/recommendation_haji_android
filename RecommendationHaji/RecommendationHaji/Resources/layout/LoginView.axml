@@ -95,6 +95,18 @@
     android:paddingTop="10dp"
 		android:backgroundTint="@android:color/holo_blue_light"
     android:layout_marginBottom="20dp" />
+	<TextView
+		android:text="Create New Account"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/createNewAccountBtn"
+    android:textColor="@android:color/black"
+    android:gravity="center_horizontal"
+    android:typeface="serif"
+    android:textSize="20dp"
+    android:textStyle="normal"
+		android:layout_marginBottom="30dp"
+    android:letterSpacing="0.1"/>
   <TextView
     android:text="©copyright baliscientist"
     android:layout_width="match_parent"

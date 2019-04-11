@@ -22,7 +22,7 @@ namespace RecommendationHaji.MyClass
     const int SUCCESS = 1;
     const int NOERROR = 0;
     const int ERROR = -1;
-    const string IP = "192.168.100.5";
+    const string IP = "192.168.43.63";
 
     private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/github/recommendation_haji_service/service.php");
 
@@ -276,7 +276,7 @@ namespace RecommendationHaji.MyClass
       }
     }
 
-    public List<MyObjectInJson> UserRegistration(string fullName, string username, string password, string dayOfBirth, string email, string address, string phoneNumber)
+    public List<MyObjectInJson> UserRegistration(string fullName, string username, string password, string email, string address, string phoneNumber, string imageUser)
     {
       List<MyObjectInJson> listData = new List<MyObjectInJson>();
       List<MyObjectInJson> listDataResult = null;
@@ -309,12 +309,6 @@ namespace RecommendationHaji.MyClass
         listData.Add(myObjectJson);
 
         myObjectJson = new MyObjectInJson();
-        myObjectJson.ObjectID = "dayOfBirthRegistration";
-        myObjectJson.ObjectInJson = dayOfBirth;
-
-        listData.Add(myObjectJson);
-
-        myObjectJson = new MyObjectInJson();
         myObjectJson.ObjectID = "emailRegistration";
         myObjectJson.ObjectInJson = email;
 
@@ -329,6 +323,12 @@ namespace RecommendationHaji.MyClass
         myObjectJson = new MyObjectInJson();
         myObjectJson.ObjectID = "phoneNumberRegistration";
         myObjectJson.ObjectInJson = phoneNumber;
+
+        listData.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "imageRegistration";
+        myObjectJson.ObjectInJson = imageUser;
 
         listData.Add(myObjectJson);
 
@@ -427,6 +427,31 @@ namespace RecommendationHaji.MyClass
           myObjectJson.ObjectInJson = dataList[i][3];
 
           mListData.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "imageFinishBooking";
+          myObjectJson.ObjectInJson = dataList[i][4];
+
+          mListData.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "idUserFinishBooking";
+          myObjectJson.ObjectInJson = dataList[i][5];
+
+          mListData.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "idPacketFinishBooking";
+          myObjectJson.ObjectInJson = dataList[i][6];
+
+          mListData.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "descriptionFinishBooking";
+          myObjectJson.ObjectInJson = dataList[i][7];
+
+          mListData.Add(myObjectJson);
+
           listData.Add(mListData);
           mListData = new List<MyObjectInJson>();
         }

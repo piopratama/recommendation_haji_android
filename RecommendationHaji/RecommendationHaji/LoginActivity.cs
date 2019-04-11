@@ -19,6 +19,7 @@ namespace RecommendationHaji
   {
     EditText usernameTxt, passwordTxt;
     Button loginBtn;
+    TextView createAccountBtn;
     ProgressBar mProgress;
 
     protected override void OnCreate(Bundle savedInstanceState)
@@ -30,9 +31,18 @@ namespace RecommendationHaji
       usernameTxt = FindViewById<EditText>(Resource.Id.usernameTxt);
       passwordTxt = FindViewById<EditText>(Resource.Id.passwordTxt);
       loginBtn = FindViewById<Button>(Resource.Id.loginBtn);
+      createAccountBtn = FindViewById<TextView>(Resource.Id.createNewAccountBtn);
       mProgress = FindViewById<ProgressBar>(Resource.Id.progressBar);
 
+      createAccountBtn.Click += CreateAccountBtn_Click;
       loginBtn.Click += LoginBtn_Click;
+
+    }
+
+    private void CreateAccountBtn_Click(object sender, EventArgs e)
+    {
+      Intent userAccountIntent = new Intent(this, typeof(UserRegistrationActivity));
+      this.StartActivity(userAccountIntent);
     }
 
     private void LoginBtn_Click(object sender, System.EventArgs e)
@@ -68,6 +78,7 @@ namespace RecommendationHaji
                     {
                       Dictionary<string, string> userData = (Dictionary<string, string>)loginResult[2].ObjectInJson;
                       //Session.name = userData["name"];
+                      Session.id = int.Parse(userData["id"]);
                       Session.username = userData["username"];
                       Session.userLevel = int.Parse(userData["level"]);
 

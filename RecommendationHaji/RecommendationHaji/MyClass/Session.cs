@@ -17,6 +17,7 @@ namespace RecommendationHaji.MyClass
     public static string name;
     public static string username { get; set; }
     public static int userLevel { get; set; }
+    public static int id { get; set; }
 
     public static bool checkSession(Activity currActivity)
     {

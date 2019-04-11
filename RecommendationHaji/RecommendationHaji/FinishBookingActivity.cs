@@ -33,6 +33,10 @@ namespace RecommendationHaji
     List<EditText> listAddress = new List<EditText>();
     List<EditText> listEmail = new List<EditText>();
     List<EditText> listPhone = new List<EditText>();
+    List<string> listImage = new List<string>();
+    string idPacket;
+    string desc;
+    string idUser = "1";
     LinearLayout linearIdentityParent;
     EditText editFullName;
     EditText editAddress;
@@ -58,14 +62,17 @@ namespace RecommendationHaji
     protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
     {
       base.OnActivityResult(requestCode, resultCode, data);
-      Bitmap bitmap = (Bitmap)data.Extras.Get("data");
-      imageViewList[requestCode].SetImageBitmap(bitmap);
-      using (MemoryStream m = new MemoryStream())
+      if (data.Extras != null )
       {
-        bitmap.Compress(Bitmap.CompressFormat.Jpeg, 50, m);
-        byte[] imageBytes = m.ToArray();
-
-        bitmapString = Convert.ToBase64String(imageBytes);
+        Bitmap bitmap = (Bitmap)data.Extras.Get("data");
+        imageViewList[requestCode].SetImageBitmap(bitmap);
+        using (MemoryStream m = new MemoryStream())
+        {
+          bitmap.Compress(Bitmap.CompressFormat.Jpeg, 50, m);
+          byte[] imageBytes = m.ToArray();
+          bitmapString = Convert.ToBase64String(imageBytes);
+          listImage.Add(bitmapString);
+        }
       }
 
     }
@@ -109,6 +116,8 @@ namespace RecommendationHaji
       {
         System.String rawData = travelInfo;
         var dataString = rawData.Split(';');
+        idPacket = dataString[0];
+        desc = dataString[11];
 
         travelPlaceholder.Text = "Departure:" + " " + dataString[1];
         travelPlaceholder.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
@@ -346,9 +355,9 @@ namespace RecommendationHaji
 
     private void SubmitBtn_Click(object sender, EventArgs e)
     {
-      string fullName, address, email, phone, image;
       List<List<string>> dataList = new List<List<string>>();
       List<string> mData = new List<string>();
+      
 
       for (int j=0; j<=indexData; j++)
       {
@@ -356,6 +365,11 @@ namespace RecommendationHaji
         mData.Add(listAddress[j].Text);
         mData.Add(listEmail[j].Text);
         mData.Add(listPhone[j].Text);
+        mData.Add(listImage[j]);
+        mData.Add(Session.id.ToString());
+        //mData.Add(idUser);
+        mData.Add(idPacket);
+        mData.Add(desc);
 
         dataList.Add(mData);
         mData = new List<string>();

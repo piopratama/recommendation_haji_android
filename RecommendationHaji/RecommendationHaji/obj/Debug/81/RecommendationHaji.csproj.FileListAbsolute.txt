@@ -57,6 +57,7 @@ C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\res\drawable\favoriteicon.xml
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\res\drawable\backarrow.png
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\res\drawable\backarrowwhite.png
+C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\RecommendationHaji.csprojAssemblyReference.cache
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\bin\Debug\Mono.Android.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\bin\Debug\mscorlib.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\bin\Debug\Newtonsoft.Json.pdb
@@ -94,7 +95,6 @@ C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\linksrc\System.Web.Services.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\linksrc\System.Xml.Linq.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\linksrc\Mono.Security.pdb
-C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\RecommendationHaji.csprojAssemblyReference.cache
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\android\assets\Mono.Android.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\android\assets\Mono.Security.pdb
 C:\Android Project\GitHub\RekomendasiHaji\RecommendationHaji\RecommendationHaji\obj\Debug\81\android\assets\mscorlib.pdb

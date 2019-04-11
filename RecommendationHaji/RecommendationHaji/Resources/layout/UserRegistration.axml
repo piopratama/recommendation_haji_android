@@ -89,22 +89,6 @@
 					android:paddingRight="10dp"
 					android:layout_marginBottom="20dp"/>
 				<EditText
-					android:id="@+id/DayOfBirthTxt"
-					android:inputType="date"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:typeface="serif"
-					android:hint="Day of Birth"
-					android:textColorHint="#777777"
-					android:textColor="#000000"
-					android:background="@drawable/border"
-					android:layout_weight="1"
-					android:paddingTop="10dp"
-					android:paddingBottom="10dp"
-					android:paddingLeft="10dp"
-					android:paddingRight="10dp"
-					android:layout_marginBottom="20dp"/>
-				<EditText
 					android:id="@+id/AddressTxt"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -150,12 +134,25 @@
 					android:paddingLeft="10dp"
 					android:paddingRight="10dp"
 					android:layout_marginBottom="20dp"/>
+				<ImageView
+					android:id="@+id/imageUser"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"/>
+				<Button
+					android:id="@+id/imagetBtn"
+					android:typeface="serif"
+					android:text="Take Photo"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:backgroundTint="@android:color/holo_green_light"
+				/>
 				<Button
 					android:id="@+id/SubmitBtn"
 					android:typeface="serif"
 					android:text="Submit"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
+					android:layout_marginBottom="40dp"
 					android:backgroundTint="@android:color/holo_blue_light"
 				/>
 			</LinearLayout>

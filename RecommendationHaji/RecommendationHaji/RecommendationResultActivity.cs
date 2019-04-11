@@ -152,7 +152,7 @@ namespace RecommendationHaji
     {
       LinearLayout control = (LinearLayout)sender;
       string rawData = control.Tag.ToString();
-
+      
       Intent activity = new Intent(this, typeof(FinishBookingActivity));
       activity.PutExtra("rawData", rawData);
       StartActivity(activity);
