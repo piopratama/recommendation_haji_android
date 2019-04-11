@@ -166,10 +166,10 @@ namespace RecommendationHaji
       //}
 
       string dateOfDeparture, dateOfReturn, packeges, price;
-      dateOfDeparture = "2019-03-01";
-      dateOfReturn = "2019-03-31";
-      packeges = "haji";
-      price = "5000";
+      dateOfDeparture = data[0][0];
+      dateOfReturn = data[0][1];
+      packeges = data[0][2];
+      price = data[0][3];
 
       mProgress.Visibility = Android.Views.ViewStates.Visible;
       mProgress.Progress = 50;

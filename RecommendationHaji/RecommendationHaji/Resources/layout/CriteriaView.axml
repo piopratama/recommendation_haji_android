@@ -86,7 +86,18 @@
 					android:paddingRight="10dp"
 					android:layout_marginBottom="20dp"
 					/>
-				<EditText
+				<Spinner  
+					android:id="@+id/packagesTxt"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/border"
+					android:paddingTop="5dp"
+					android:paddingBottom="5dp"
+					android:paddingLeft="5dp"
+					android:paddingRight="5dp"
+					android:layout_marginBottom="20dp" />
+				<!--<EditText
 					android:id="@+id/packagesTxt"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
@@ -101,7 +112,7 @@
 					android:paddingLeft="10dp"
 					android:paddingRight="10dp"
 					android:layout_marginBottom="20dp"
-					/>
+					/>-->
 				<EditText
 					android:inputType="number"
 					android:id="@+id/priceTxt"

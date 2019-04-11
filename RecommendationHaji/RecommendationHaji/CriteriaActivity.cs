@@ -14,15 +14,23 @@ using Android.Views.InputMethods;
 using Android.Widget;
 using Newtonsoft.Json;
 using RecommendationHaji.MyClass;
+using static Android.App.DatePickerDialog;
 
 namespace RecommendationHaji
 {
-  [Activity(Label = "CriteriaActivity", MainLauncher = true, Theme = "@style/AppTheme", WindowSoftInputMode =SoftInput.AdjustResize|SoftInput.StateHidden)]
-  public class CriteriaActivity : AppCompatActivity
+  [Activity(Label = "CriteriaActivity", Theme = "@style/AppTheme", WindowSoftInputMode =SoftInput.AdjustResize|SoftInput.StateHidden)]
+  public class CriteriaActivity : AppCompatActivity, IOnDateSetListener
   {
-    EditText dateOfDepartureTxt, dateOfReturnTxt, packagesTxt, priceTxt;
+    EditText dateOfDepartureTxt, dateOfReturnTxt, priceTxt;
+    Spinner packagesTxt;
     Button submitBtn;
     ProgressBar mProgress;
+
+    List<KeyValuePair<string, string>> packages;
+    int selectedPackages = 0;
+    const int DATE_DIALOG = 1;
+
+    int whichDate = 0;
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -37,15 +45,32 @@ namespace RecommendationHaji
       {
         dateOfDepartureTxt = FindViewById<EditText>(Resource.Id.DateOfDepartureTxt);
         dateOfReturnTxt = FindViewById<EditText>(Resource.Id.DateOfReturnTxt);
-        packagesTxt = FindViewById<EditText>(Resource.Id.packagesTxt);
+        packagesTxt = FindViewById<Spinner>(Resource.Id.packagesTxt);
         priceTxt = FindViewById<EditText>(Resource.Id.priceTxt);
         submitBtn = FindViewById<Button>(Resource.Id.submitCriteriaBtn);
         mProgress = FindViewById<ProgressBar>(Resource.Id.progressBar);
 
+        packages = new List<KeyValuePair<string, string>>
+        {
+            new KeyValuePair<string, string>("haji", "Haji"),
+            new KeyValuePair<string, string>("umroh", "Umroh")
+        };
+
+        List<string> packagesNames = new List<string>();
+        foreach (var item in packages)
+        {
+          packagesNames.Add(item.Key);
+        }
+
+        var adapter = new ArrayAdapter<string>(this, Resource.Layout.spinner_item, packagesNames);
+        adapter.SetDropDownViewResource(Resource.Layout.spinner_item);
+        packagesTxt.Adapter = adapter;
+
+        packagesTxt.SetSelection(0);
+
         InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
         MyGlobalClass.hideKeyboard(ref imm, ref dateOfDepartureTxt);
         MyGlobalClass.hideKeyboard(ref imm, ref dateOfReturnTxt);
-        MyGlobalClass.hideKeyboard(ref imm, ref packagesTxt);
         MyGlobalClass.hideKeyboard(ref imm, ref priceTxt);
       }
       catch (Exception ex)
@@ -54,10 +79,57 @@ namespace RecommendationHaji
         Toast.MakeText(this, MyGlobalClass.ErrorMessage(this, ref st, ex.Message), ToastLength.Short).Show();
       }
     }
-
+    
     private void addEvent()
     {
+      dateOfDepartureTxt.Click += delegate
+      {
+        whichDate = 1;
+        this.RemoveDialog(DATE_DIALOG);
+        ShowDialog(DATE_DIALOG);
+      };
+
+      dateOfReturnTxt.Click += delegate
+      {
+        whichDate = 2;
+        this.RemoveDialog(DATE_DIALOG);
+        ShowDialog(DATE_DIALOG);
+      };
+
       submitBtn.Click += SubmitBtn_Click;
+      packagesTxt.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+    }
+
+    protected override Dialog OnCreateDialog(int id)
+    {
+      switch (id)
+      {
+        case DATE_DIALOG:
+        {
+          return new DatePickerDialog(this, this, DateTime.Now.Year, (DateTime.Now.Month - 1), DateTime.Now.Day);
+        }
+        default:
+          break;
+      }
+      return null;
+    }
+
+    public void OnDateSet(DatePicker view, int year, int month, int dayOfMonth)
+    {
+      if(whichDate==1)
+      {
+        dateOfDepartureTxt.Text = year + "-" + (month + 1).ToString("00") + "-" + dayOfMonth.ToString("00");
+      }
+      else if(whichDate==2)
+      {
+        dateOfReturnTxt.Text = year + "-" + (month + 1).ToString("00") + "-" + dayOfMonth.ToString("00");
+      }
+      
+    }
+
+    private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+    {
+      selectedPackages = e.Position;
     }
 
     private void SubmitBtn_Click(object sender, EventArgs e)
@@ -66,13 +138,12 @@ namespace RecommendationHaji
       string dateOfDeparture, dateOfReturn, packeges, price;
       dateOfDeparture = dateOfDepartureTxt.Text;
       dateOfReturn = dateOfReturnTxt.Text;
-      packeges = packagesTxt.Text;
+      packeges = packagesTxt.GetItemAtPosition(selectedPackages).ToString();
       price = priceTxt.Text;
 
       InputMethodManager imm = (InputMethodManager)GetSystemService(Context.InputMethodService);
       MyGlobalClass.hideKeyboard(ref imm, ref dateOfDepartureTxt);
       MyGlobalClass.hideKeyboard(ref imm, ref dateOfReturnTxt);
-      MyGlobalClass.hideKeyboard(ref imm, ref packagesTxt);
       MyGlobalClass.hideKeyboard(ref imm, ref priceTxt);
 
       List<List<String>> result = new List<List<string>>();

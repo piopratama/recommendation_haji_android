@@ -63,6 +63,7 @@
     <Compile Include="DetailAgencyActivity.cs" />
     <Compile Include="FinishBookingActivity.cs" />
     <Compile Include="LoginActivity.cs" />
+    <Compile Include="MainMenuActivity.cs" />
     <Compile Include="MyClass\Connection.cs" />
     <Compile Include="MyClass\MyGlobalClass.cs" />
     <Compile Include="MyClass\MyObjectInJson.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="RecommendationResultActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatusBookingActivity.cs" />
     <Compile Include="UserRegistrationActivity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +193,19 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\BackArrowWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\spinner_item.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\MainMenu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\StatusBooking.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

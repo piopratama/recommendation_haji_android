@@ -14,7 +14,7 @@ using Android.Views;
 
 namespace RecommendationHaji
 {
-  [Activity(Label = "LoginActivity", Theme = "@style/AppTheme", WindowSoftInputMode = SoftInput.AdjustResize | SoftInput.StateHidden)]
+  [Activity(Label = "LoginActivity", MainLauncher = true, Theme = "@style/AppTheme", WindowSoftInputMode = SoftInput.AdjustResize | SoftInput.StateHidden)]
   public class LoginActivity : AppCompatActivity
   {
     EditText usernameTxt, passwordTxt;
@@ -82,7 +82,7 @@ namespace RecommendationHaji
                       Session.username = userData["username"];
                       Session.userLevel = int.Parse(userData["level"]);
 
-                      Intent serviceIntent = new Intent(this, typeof(CriteriaActivity));
+                      Intent serviceIntent = new Intent(this, typeof(MainMenuActivity));
 
                       ////To pass:
                       //intent.putExtra("Myitem", item);

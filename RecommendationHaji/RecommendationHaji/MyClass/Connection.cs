@@ -276,6 +276,87 @@ namespace RecommendationHaji.MyClass
       }
     }
 
+    public List<MyObjectInJson> StatusBookingProcess()
+    {
+      List<MyObjectInJson> listData = new List<MyObjectInJson>();
+      List<MyObjectInJson> listDataResult = null;
+
+      MyObjectInJson myObjectJson = new MyObjectInJson();
+
+      try
+      {
+        myObjectJson.ObjectID = "url";
+        myObjectJson.ObjectInJson = "statusbooking";
+
+        listData.Add(myObjectJson);
+        
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "idUserStatusBooking";
+        myObjectJson.ObjectInJson = Session.id;
+
+        listData.Add(myObjectJson);
+
+        string resultListObj = ListObjectToJson(listData);
+        var myResult = GetJSONData(resultListObj);
+
+        if (myResult.ErrorCode == 0)
+        {
+          if (myResult.Result.Length > 0)
+          {
+            listDataResult = JsonConvert.DeserializeObject<List<MyObjectInJson>>(myResult.Result);
+            if (listDataResult.Count > 2)
+            {
+              List<Dictionary<string, string>> data = new List<Dictionary<string, string>>();
+              Dictionary<string, string> myDictionary = new Dictionary<string, string>();
+              JArray x = JsonConvert.DeserializeObject<JArray>(listDataResult[2].ObjectInJson.ToString());
+              foreach (JObject content in x.Children<JObject>())
+              {
+                foreach (JProperty prop in content.Properties())
+                {
+                  myDictionary.Add(prop.Name, prop.Value.ToString());
+                }
+                data.Add(myDictionary);
+                myDictionary = new Dictionary<string, string>();
+              }
+              listDataResult[2].ObjectInJson = data;
+            }
+          }
+        }
+        else if (myResult.ErrorCode == -1)
+        {
+          listDataResult = new List<MyObjectInJson>();
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "key";
+          myObjectJson.ObjectID = "-1";
+          listDataResult.Add(myObjectJson);
+
+          myObjectJson = new MyObjectInJson();
+          myObjectJson.ObjectID = "message";
+          myObjectJson.ObjectID = myResult.ErrorMessage;
+          listDataResult.Add(myObjectJson);
+        }
+
+        return listDataResult;
+      }
+      catch (Exception e)
+      {
+        listDataResult = new List<MyObjectInJson>();
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "key";
+        myObjectJson.ObjectID = "-1";
+        listDataResult.Add(myObjectJson);
+
+        myObjectJson = new MyObjectInJson();
+        myObjectJson.ObjectID = "message";
+        myObjectJson.ObjectID = ErrorMessage(e.Message);
+        listDataResult.Add(myObjectJson);
+
+        return listDataResult;
+      }
+    }
+
     public List<MyObjectInJson> UserRegistration(string fullName, string username, string password, string email, string address, string phoneNumber, string imageUser)
     {
       List<MyObjectInJson> listData = new List<MyObjectInJson>();
