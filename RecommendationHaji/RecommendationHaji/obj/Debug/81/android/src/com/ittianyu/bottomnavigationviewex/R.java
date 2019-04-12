@@ -2914,13 +2914,7 @@ containing a value of this type.
         public static int abc_vector_test=0x7f020052;
         public static int akunicon=0x7f020053;
         public static int avd_hide_password=0x7f020054;
-        public static int avd_hide_password_1=0x7f020079;
-        public static int avd_hide_password_2=0x7f02007a;
-        public static int avd_hide_password_3=0x7f02007b;
         public static int avd_show_password=0x7f020055;
-        public static int avd_show_password_1=0x7f02007c;
-        public static int avd_show_password_2=0x7f02007d;
-        public static int avd_show_password_3=0x7f02007e;
         public static int backarrow=0x7f020056;
         public static int backarrowwhite=0x7f020057;
         public static int bed=0x7f020058;
@@ -3265,9 +3259,10 @@ containing a value of this type.
         public static int select_dialog_multichoice_material=0x7f040040;
         public static int select_dialog_singlechoice_material=0x7f040041;
         public static int spinner_item=0x7f040042;
-        public static int support_simple_spinner_dropdown_item=0x7f040043;
-        public static int tooltip=0x7f040044;
-        public static int userregistration=0x7f040045;
+        public static int statusbooking=0x7f040043;
+        public static int support_simple_spinner_dropdown_item=0x7f040044;
+        public static int tooltip=0x7f040045;
+        public static int userregistration=0x7f040046;
     }
     public static final class menu {
         public static int menu_navigation=0x7f0e0000;

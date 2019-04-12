@@ -111,8 +111,14 @@ namespace RecommendationHaji
       LinearLayout linearParent = new LinearLayout(this);
       Button addGuestBtn = new Button(this);
       LinearLayout linearGuestsBtn = new LinearLayout(this);
+      TextView travelStar = new TextView(this);
+      ImageView iconStar = new ImageView(this);
+      LinearLayout linearParentStar = new LinearLayout(this);
+      TextView travelLicense = new TextView(this);
+      ImageView iconLicense = new ImageView(this);
+      LinearLayout linearParentLicense = new LinearLayout(this);
 
-      if(mode==0)
+      if (mode==0)
       {
         System.String rawData = travelInfo;
         var dataString = rawData.Split(';');
@@ -126,12 +132,24 @@ namespace RecommendationHaji
         iconPlaceholder.SetImageResource(Resource.Drawable.placeholder);
         iconPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
 
+        linearParentPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
+        linearParentPlaceholder.Orientation = Orientation.Horizontal;
+        linearParentPlaceholder.SetPadding(0, 50, 20, 0);
+        linearParentPlaceholder.AddView(iconPlaceholder, 0);
+        linearParentPlaceholder.AddView(travelPlaceholder, 1);
+
         travelHaji.Text = "Return:" + " " + dataString[2];
         travelHaji.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
         travelHaji.SetTextColor(Android.Graphics.Color.Black);
 
         iconHaji.SetImageResource(Resource.Drawable.star);
         iconHaji.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
+
+        linearParentHaji.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
+        linearParentHaji.Orientation = Orientation.Horizontal;
+        linearParentHaji.SetPadding(0, 50, 20, 0);
+        linearParentHaji.AddView(iconHaji, 0);
+        linearParentHaji.AddView(travelHaji, 1);
 
         travelUmroh.Text = "Package:" + " " + dataString[9];
         travelUmroh.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
@@ -140,17 +158,31 @@ namespace RecommendationHaji
         iconUmroh.SetImageResource(Resource.Drawable.star);
         iconUmroh.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
 
-        linearParentPlaceholder.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
-        linearParentPlaceholder.Orientation = Orientation.Horizontal;
-        linearParentPlaceholder.SetPadding(0, 50, 20, 0);
-        linearParentPlaceholder.AddView(iconPlaceholder, 0);
-        linearParentPlaceholder.AddView(travelPlaceholder, 1);
+        travelStar.Text = dataString[15]+"/5";
+        travelStar.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
+        travelStar.SetTextColor(Android.Graphics.Color.Black);
 
-        linearParentHaji.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
-        linearParentHaji.Orientation = Orientation.Horizontal;
-        linearParentHaji.SetPadding(0, 50, 20, 0);
-        linearParentHaji.AddView(iconHaji, 0);
-        linearParentHaji.AddView(travelHaji, 1);
+        iconStar.SetImageResource(Resource.Drawable.star1);
+        iconStar.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
+
+        travelLicense.Text = "License :" + " "+dataString[14];
+        travelLicense.SetTextSize(Android.Util.ComplexUnitType.Dip, 13);
+        travelLicense.SetTextColor(Android.Graphics.Color.Black);
+
+        iconLicense.SetImageResource(Resource.Drawable.star);
+        iconLicense.LayoutParameters = new LinearLayout.LayoutParams(110, 70);
+
+        linearParentLicense.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
+        linearParentLicense.Orientation = Orientation.Horizontal;
+        linearParentLicense.SetPadding(0, 50, 20, 0);
+        linearParentLicense.AddView(iconLicense, 0);
+        linearParentLicense.AddView(travelLicense, 1);
+
+        linearParentStar.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
+        linearParentStar.Orientation = Orientation.Horizontal;
+        linearParentStar.SetPadding(0, 50, 20, 0);
+        linearParentStar.AddView(iconStar, 0);
+        linearParentStar.AddView(travelStar, 1);
 
         linearParentUmroh.LayoutParameters = new LinearLayout.LayoutParams(WindowManagerLayoutParams.MatchParent, WindowManagerLayoutParams.WrapContent);
         linearParentUmroh.Orientation = Orientation.Horizontal;
@@ -163,6 +195,8 @@ namespace RecommendationHaji
         linearInfo.AddView(linearParentPlaceholder, 0);
         linearInfo.AddView(linearParentHaji, 1);
         linearInfo.AddView(linearParentUmroh, 2);
+        linearInfo.AddView(linearParentLicense, 3);
+        linearInfo.AddView(linearParentStar, 4);
 
 
         var imageBitmap = MyGlobalClass.GetImageBitmapFromUrl(dataString[13]);
@@ -174,7 +208,7 @@ namespace RecommendationHaji
         linearParentdesc.AddView(iconTravel, 0);
         linearParentdesc.AddView(linearInfo, 1);
 
-        travelName.Text = "Airlangga";
+        travelName.Text = dataString[4];
         travelName.SetTextColor(Android.Graphics.Color.Black);
         travelName.SetTextSize(Android.Util.ComplexUnitType.Pt, 15);
         travelName.SetPadding(60, 20, 20, 20);

@@ -288,7 +288,7 @@
       ]
     },
     "Newtonsoft.Json/12.0.1": {
-      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "sha512": "pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "type": "package",
       "path": "newtonsoft.json/12.0.1",
       "files": [
@@ -551,21 +551,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pio\\.nuget\\packages\\": {}
+    "C:\\Users\\gusde_dharmayoga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VS PROJECT\\github\\recommendation_haji_android\\RecommendationHaji\\RecommendationHaji\\RecommendationHaji.csproj",
+      "projectUniqueName": "C:\\Android Project\\GitHub\\RecommendationHaji\\RecommendationHaji\\RecommendationHaji.csproj",
       "projectName": "RecommendationHaji",
-      "projectPath": "D:\\VS PROJECT\\github\\recommendation_haji_android\\RecommendationHaji\\RecommendationHaji\\RecommendationHaji.csproj",
-      "packagesPath": "C:\\Users\\pio\\.nuget\\packages\\",
-      "outputPath": "D:\\VS PROJECT\\github\\recommendation_haji_android\\RecommendationHaji\\RecommendationHaji\\obj\\",
+      "projectPath": "C:\\Android Project\\GitHub\\RecommendationHaji\\RecommendationHaji\\RecommendationHaji.csproj",
+      "packagesPath": "C:\\Users\\gusde_dharmayoga\\.nuget\\packages\\",
+      "outputPath": "C:\\Android Project\\GitHub\\RecommendationHaji\\RecommendationHaji\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\pio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+        "C:\\Users\\gusde_dharmayoga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -573,7 +572,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\EXTENDED C\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

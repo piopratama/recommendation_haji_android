@@ -2327,7 +2327,10 @@ namespace RecommendationHaji
 			public const int star = 2130771988;
 			
 			// aapt resource value: 0x7F010015
-			public const int success = 2130771989;
+			public const int star1 = 2130771989;
+			
+			// aapt resource value: 0x7F010016
+			public const int success = 2130771990;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
@@ -2335,8 +2338,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010016
-			public const int users = 2130771990;
+			// aapt resource value: 0x7F010017
+			public const int users = 2130771991;
 			
 			static Drawable()
 			{
@@ -2414,8 +2417,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0015
 			public const int add = 2131492885;
 			
-			// aapt resource value: 0x7F030046
-			public const int AddressTxt = 2130903110;
+			// aapt resource value: 0x7F030048
+			public const int AddressTxt = 2130903112;
 			
 			// aapt resource value: 0x7F030014
 			public const int AgencyNameTxtView = 2130903060;
@@ -2513,8 +2516,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C002C
 			public const int edit_query = 2131492908;
 			
-			// aapt resource value: 0x7F030047
-			public const int EmailTxt = 2130903111;
+			// aapt resource value: 0x7F030049
+			public const int EmailTxt = 2130903113;
 			
 			// aapt resource value: 0x7F0C002D
 			public const int end = 2131492909;
@@ -2549,8 +2552,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0009
 			public const int forever = 2131492873;
 			
-			// aapt resource value: 0x7F030045
-			public const int FullNameTxt = 2130903109;
+			// aapt resource value: 0x7F030047
+			public const int FullNameTxt = 2130903111;
 			
 			// aapt resource value: 0x7F0C0034
 			public const int ghost_view = 2131492916;
@@ -2579,11 +2582,11 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C0038
 			public const int image = 2131492920;
 			
-			// aapt resource value: 0x7F030050
-			public const int imagetBtn = 2130903120;
+			// aapt resource value: 0x7F030052
+			public const int imagetBtn = 2130903122;
 			
-			// aapt resource value: 0x7F030049
-			public const int imageUser = 2130903113;
+			// aapt resource value: 0x7F030051
+			public const int imageUser = 2130903121;
 			
 			// aapt resource value: 0x7F0C000C
 			public const int info = 2131492876;
@@ -2594,14 +2597,14 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C003B
 			public const int item_touch_helper_previous_elevation = 2131492923;
 			
-			// aapt resource value: 0x7F030051
-			public const int i_music = 2130903121;
-			
-			// aapt resource value: 0x7F030052
-			public const int i_song = 2130903122;
-			
 			// aapt resource value: 0x7F030053
-			public const int i_test = 2130903123;
+			public const int i_music = 2130903123;
+			
+			// aapt resource value: 0x7F030054
+			public const int i_song = 2130903124;
+			
+			// aapt resource value: 0x7F030055
+			public const int i_test = 2130903125;
 			
 			// aapt resource value: 0x7F0C003C
 			public const int largeLabel = 2131492924;
@@ -2696,8 +2699,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030037
 			public const int passwordTxt = 2130903095;
 			
-			// aapt resource value: 0x7F030048
-			public const int PhoneNumberTxt = 2130903112;
+			// aapt resource value: 0x7F030050
+			public const int PhoneNumberTxt = 2130903120;
 			
 			// aapt resource value: 0x7F0C0050
 			public const int pin = 2131492944;
@@ -2825,6 +2828,9 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030042
 			public const int statusBookingBtn = 2130903106;
 			
+			// aapt resource value: 0x7F030045
+			public const int statusBookingParent = 2130903109;
+			
 			// aapt resource value: 0x7F0C0074
 			public const int status_bar_latest_event_content = 2131492980;
 			
@@ -2839,6 +2845,9 @@ namespace RecommendationHaji
 			
 			// aapt resource value: 0x7F0C0076
 			public const int submit_area = 2131492982;
+			
+			// aapt resource value: 0x7F030046
+			public const int tableLayout = 2130903110;
 			
 			// aapt resource value: 0x7F0C0077
 			public const int tabMode = 2131492983;

@@ -138,8 +138,8 @@ namespace RecommendationHaji
                   {
                     if (UserRegistrationResult[0].ObjectInJson.ToString() == "1")
                     {
-                    //  Dictionary<string, string> userData = (Dictionary<string, string>)UserRegistrationResult[2].ObjectInJson;
-                    //  Session.name = userData["name"];
+                      Dictionary<string, string> userData = (Dictionary<string, string>)UserRegistrationResult[2].ObjectInJson;
+                    //Session.id_user = userData["id"];
                     //  Session.username = userData["username"];
                     //  Session.userLevel = int.Parse(userData["level"]);
 
