@@ -3100,7 +3100,7 @@ containing a value of this type.
         public static final int passwordTxt=0x7f0800bb;
         public static final int pin=0x7f08004c;
         public static final int priceTxt=0x7f080090;
-        public static final int progressBar=0x7f08008c;
+        public static final int progressBar=0x7f08008b;
         public static final int progress_circular=0x7f080006;
         public static final int progress_horizontal=0x7f080007;
         public static final int radio=0x7f080074;
@@ -3116,7 +3116,7 @@ containing a value of this type.
         public static final int scrollIndicatorDown=0x7f08006a;
         public static final int scrollIndicatorUp=0x7f080066;
         public static final int scrollView=0x7f080067;
-        public static final int scrollView1=0x7f08008b;
+        public static final int scrollView1=0x7f08008c;
         public static final int scrollable=0x7f080054;
         public static final int searchBtn=0x7f0800bf;
         public static final int search_badge=0x7f08007f;

@@ -134,6 +134,8 @@ namespace RecommendationHaji
 
     private void SubmitBtn_Click(object sender, EventArgs e)
     {
+      mProgress.Visibility = Android.Views.ViewStates.Visible;
+      mProgress.Progress = 50;
 
       string dateOfDeparture, dateOfReturn, packeges, price;
       dateOfDeparture = dateOfDepartureTxt.Text;
@@ -158,9 +160,8 @@ namespace RecommendationHaji
       Intent activity = new Intent(this, typeof(RecommendationResultActivity));
       activity.PutExtra("data", JsonConvert.SerializeObject(result));
       StartActivity(activity);
-
-
-      
+      mProgress.Progress = 100;
+      mProgress.Visibility = Android.Views.ViewStates.Invisible;
     }
   }
 }

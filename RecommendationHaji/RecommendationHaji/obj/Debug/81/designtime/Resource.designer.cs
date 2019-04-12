@@ -2708,8 +2708,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F030008
 			public const int priceTxt = 2130903048;
 			
-			// aapt resource value: 0x7F030004
-			public const int progressBar = 2130903044;
+			// aapt resource value: 0x7F030003
+			public const int progressBar = 2130903043;
 			
 			// aapt resource value: 0x7F0C0051
 			public const int progress_circular = 2131492945;
@@ -2756,8 +2756,8 @@ namespace RecommendationHaji
 			// aapt resource value: 0x7F0C005D
 			public const int scrollView = 2131492957;
 			
-			// aapt resource value: 0x7F030003
-			public const int scrollView1 = 2130903043;
+			// aapt resource value: 0x7F030004
+			public const int scrollView1 = 2130903044;
 			
 			// aapt resource value: 0x7F030041
 			public const int searchBtn = 2130903105;

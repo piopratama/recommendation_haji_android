@@ -28,6 +28,7 @@ namespace RecommendationHaji
   {
     LinearLayout bookingParent;
     Button submitBtn;
+    ProgressBar mProgress;
     List<ImageView> imageViewList = new List<ImageView>();
     List<EditText> listFullName = new List<EditText>();
     List<EditText> listAddress = new List<EditText>();
@@ -83,7 +84,7 @@ namespace RecommendationHaji
       {
         bookingParent = FindViewById<LinearLayout>(Resource.Id.bookingParent);
         submitBtn = FindViewById<Button>(Resource.Id.SubmitBtn);
-        
+        mProgress = FindViewById<ProgressBar>(Resource.Id.progressBar);
       }
       catch (Exception ex)
       {
@@ -416,8 +417,8 @@ namespace RecommendationHaji
       MyGlobalClass.hideKeyboard(ref imm, ref editEmail);
       MyGlobalClass.hideKeyboard(ref imm, ref editPhone);
 
-      //mProgress.Visibility = Android.Views.ViewStates.Visible;
-      //mProgress.Progress = 50;
+      mProgress.Visibility = Android.Views.ViewStates.Visible;
+      mProgress.Progress = 50;
       try
       {
         new Thread(new ThreadStart(delegate
@@ -474,8 +475,8 @@ namespace RecommendationHaji
               Toast.MakeText(this, "Unknown error occured", ToastLength.Short).Show();
             }
 
-            //mProgress.Progress = 100;
-            //mProgress.Visibility = Android.Views.ViewStates.Invisible;
+            mProgress.Progress = 100;
+            mProgress.Visibility = Android.Views.ViewStates.Invisible;
           });
         })).Start();
       }
@@ -483,8 +484,8 @@ namespace RecommendationHaji
       {
         StackTrace st = new StackTrace();
         Toast.MakeText(this, MyGlobalClass.ErrorMessage(this, ref st, ex.Message), ToastLength.Short).Show();
-        //mProgress.Progress = 0;
-        //mProgress.Visibility = Android.Views.ViewStates.Invisible;
+        mProgress.Progress = 0;
+        mProgress.Visibility = Android.Views.ViewStates.Invisible;
       }
     }
   }

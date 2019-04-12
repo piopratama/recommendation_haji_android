@@ -22,7 +22,7 @@ namespace RecommendationHaji.MyClass
     const int SUCCESS = 1;
     const int NOERROR = 0;
     const int ERROR = -1;
-    const string IP = "192.168.100.3";
+    const string IP = "192.168.100.5";
 
     private HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://" + IP + "/github/recommendation_haji_service/service.php");
 
